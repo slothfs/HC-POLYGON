@@ -18,11 +18,11 @@ camera.position.setX(-3);
 
 renderer.render(scene, camera);
 
-const pointLight = new THREE.PointLight(0xffffff);
+const pointLight = new THREE.PointLight(0xffffff, 1, 100);
 pointLight.position.set(5, 5, 5);
 scene.add(pointLight);
 
-const ambientLight = new THREE.AmbientLight(0xffffff);
+const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
 scene.add(ambientLight);
 
 const geometry = new THREE.TorusGeometry(10, 3, 100, 100);
@@ -36,6 +36,12 @@ scene.add(torus);
 
 function animate() {
   requestAnimationFrame( animate);
+
+  
+  torus.rotation.x += 0.01;
+  torus.rotation.y += 0.005;
+  torus.rotation.z += 0.01;
+
   renderer.render( scene, camera);
 }
 

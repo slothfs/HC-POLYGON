@@ -9,6 +9,6 @@ first i made a blank canva scene then added a ring comes with pre with pack then
 # demo link :
 
 # project img :
-![Uploading image.png…]()
+<img width="1919" height="1021" alt="image" src="https://github.com/user-attachments/assets/a156ea1a-ea26-4c23-a32a-c67d6345bcf2" />
 
 

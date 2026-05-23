@@ -3,3 +3,35 @@ canvas {
   top: 0;
   left: 0;
 }
+
+#text-content {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+
+  background: rgba(0, 0, 0, 0.85);
+  padding: 25px;
+  border-radius: 10px;
+
+  max-width: 380px;
+  width: 380px;
+
+  font-family: Arial, sans-serif;
+  z-index: 10;
+
+  box-shadow: 0 0 30px rgba(123, 44, 191, 0.5);
+  pointer-events: auto;
+}
+
+#text-content h1 {
+  color: black;
+  margin: 0 0 12px 0;
+  font-size: 20px;
+}
+
+#text-content p {
+  color: white;
+  font-size: 13px;
+  line-height: 1.4;
+  margin: 0;
+}

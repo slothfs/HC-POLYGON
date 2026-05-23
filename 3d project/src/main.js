@@ -33,7 +33,7 @@ const controls = new OrbitControls(camera, renderer.domElement);
 
 function addStar() {
   const geometry = new THREE.SphereGeometry(0.25,24,24);
-  const material = new THREE.MeshStandardMaterial( {color : 0xffffff})
+  const material = new THREE.MeshStandardMaterial( {color : 0xFFFF00, emissive: 0xFFFF00, emissiveIntensity: 0.5})
   const star = new THREE.Mesh( geometry, material);
   
   const [x, y , z] = Array(3).fill().map(() => THREE.MathUtils.randFloatSpread( 100 ) );
@@ -44,14 +44,28 @@ function addStar() {
 
 Array(200).fill().forEach(addStar)
 
+const spaceTexture = new THREE.TextureLoader().load('/bgmain.jpg');
+scene.background = spaceTexture;
+
 const geometry = new THREE.TorusGeometry(10, 3, 100, 100);
 const material = new THREE.MeshStandardMaterial({ 
-  color: 0xffffff,
+  color: 0x7B2CBF,
   wireframe: true
 });
 const torus = new THREE.Mesh(geometry, material);
 
 scene.add(torus);
+
+const boxTexture = new THREE.TextureLoader().load('/choso.webp');
+const boxGeometry = new THREE.BoxGeometry(7, 7, 7);
+const boxMaterial = new THREE.MeshStandardMaterial({ 
+  map: boxTexture,
+  metalness: 0.3,
+  roughness: 0.5
+});
+const box = new THREE.Mesh(boxGeometry, boxMaterial);
+box.position.z = 0;
+scene.add(box);
 
 function animate() {
   requestAnimationFrame( animate);
